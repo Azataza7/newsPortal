@@ -9,7 +9,7 @@ const post = Router();
 post.get('/', async (req, res) => {
   try {
     const [results] = await mysqlDb.getConnection().query(
-      'SELECT * FROM news_db.post'
+      'SELECT id, title, description, image, createdAt FROM news_db.post'
     );
 
     res.status(200).send(results);

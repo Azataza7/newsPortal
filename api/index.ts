@@ -3,6 +3,7 @@ import cors from 'cors';
 
 import mysqlDb from './mysqlDb';
 import post from './routers/posts';
+import comment from './routers/comments';
 
 const app = express();
 const port = 8000;
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use('/posts', post)
+app.use('/comments', comment)
 
 const run = async () => {
   await mysqlDb.init();
