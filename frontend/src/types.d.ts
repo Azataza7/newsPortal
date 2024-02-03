@@ -13,6 +13,12 @@ export interface fullPost {
   createdAt: string;
 }
 
+export interface userPost {
+  title: string;
+  description: string;
+  image: File | null;
+}
+
 export interface comment {
   id: number;
   post_id: number;
@@ -20,4 +26,4 @@ export interface comment {
   text: string;
 }
 
-export type userComment = Omit<comment, "id">
+export type userComment = Omit<comment, 'id'>

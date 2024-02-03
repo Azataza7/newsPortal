@@ -14,7 +14,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import NewspaperIcon from '@mui/icons-material/Newspaper';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 
 
@@ -66,7 +65,6 @@ export default function DrawerAppBar() {
             to="/"
             sx={{flexGrow: 1, display: {xs: 'none', sm: 'block'}}}
           >
-            <NewspaperIcon/>
             <img src="https://kaktus.media/src/Template/Block/Header/img/logo-hover.svg?mtime=1613710204" alt="Logo" style={{height: 30, width: 110}}/>
           </Typography>
           <Box sx={{display: {xs: 'none', sm: 'block'}}}>
