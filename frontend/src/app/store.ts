@@ -1,7 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { newsReducer } from '../store/News/NewsSlice';
 
 export const store = configureStore({
   reducer: {
+    news: newsReducer,
   }
 });
 
