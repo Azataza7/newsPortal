@@ -11,7 +11,7 @@ comment.get('/', async (req, res) => {
     let sqlReq = 'SELECT * FROM news_db.comments';
 
     if (postId) {
-      sqlReq += ' WHERE post_id = ?'
+      sqlReq += ' WHERE post_id = ?';
     }
 
     const [results] = await mysqlDb.getConnection().query(sqlReq, [postId]);

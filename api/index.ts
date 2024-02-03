@@ -12,8 +12,8 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(cors());
 
-app.use('/posts', post)
-app.use('/comments', comment)
+app.use('/posts', post);
+app.use('/comments', comment);
 
 const run = async () => {
   await mysqlDb.init();
