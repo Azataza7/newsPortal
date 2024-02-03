@@ -11,8 +11,8 @@ const NewsDetails = () => {
   const id = useParams().id;
   const post: fullPost[] = useAppSelector(selectNewsPosts);
   const comments: comment[] = useAppSelector(selectCommentsPost);
-  const onLoading = useAppSelector(onLoadingComments);
-  const onSendingComment = useAppSelector(onCreatingComment);
+  const onLoading: boolean = useAppSelector(onLoadingComments);
+  const onSendingComment: boolean = useAppSelector(onCreatingComment);
 
   const [author, setAuthor] = useState('');
   const [commentText, setCommentText] = useState('');

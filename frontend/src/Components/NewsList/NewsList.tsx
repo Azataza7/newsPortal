@@ -10,7 +10,7 @@ const NewsList = () => {
   const dispatch = useAppDispatch();
 
   const posts: post[] = useAppSelector(selectNewsPosts);
-  const onLoading = useAppSelector(onLoadingPosts);
+  const onLoading: boolean = useAppSelector(onLoadingPosts);
 
   useEffect(() => {
     dispatch(fetchPosts());

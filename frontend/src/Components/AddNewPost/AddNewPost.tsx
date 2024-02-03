@@ -10,7 +10,7 @@ import { userPost } from '../../types';
 const AddNewPost = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const [formData, setFormData]: userPost = useState({
+  const [formData, setFormData] = useState<userPost>({
     title: '',
     description: '',
     image: null,
@@ -58,7 +58,6 @@ const AddNewPost = () => {
             name="description"
             label="Description"
             placeholder="Write description here"
-            multiline
             required
             value={formData.description}
             onChange={handleChange}
