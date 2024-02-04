@@ -26,7 +26,7 @@ comment.post('/', async (req, res) => {
   const comment: Comment = {
     id: req.body.id,
     post_id: req.body.post_id,
-    author: req.body.author,
+    author: req.body.author ? req.body.author : 'Anonymous',
     text: req.body.text,
   };
 

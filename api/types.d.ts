@@ -9,6 +9,6 @@ export interface Post {
 export interface Comment {
   id: number;
   post_id: number;
-  author: string;
+  author: string | null;
   text: string;
 }

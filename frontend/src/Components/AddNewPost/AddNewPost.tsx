@@ -41,6 +41,12 @@ const AddNewPost = () => {
 
   return (
     <form className="send-container" style={{marginBottom: '70px'}} onSubmit={handleSubmit}>
+      <input
+        style={{display: 'none'}}
+        type="file"
+        name="image"
+        onChange={handleFileChange}
+      />
       <Grid container direction="column" spacing={2}>
         <Grid item>
           <TextField
@@ -48,6 +54,7 @@ const AddNewPost = () => {
             label="Title"
             placeholder="Write title here"
             required
+            fullWidth
             value={formData.title}
             onChange={handleChange}
           />
@@ -61,29 +68,29 @@ const AddNewPost = () => {
             required
             value={formData.description}
             onChange={handleChange}
+            multiline
+            rows={8}
           />
         </Grid>
-        <Grid item>
-          <input
-            style={{display: 'none'}}
-            type="file"
-            name="image"
-            onChange={handleFileChange}
-          />
-          <AttachFileIcon
-            onClick={() => document.querySelector('input[name="image"]')?.click()}
-            cursor="pointer"
-            sx={{color: '#000'}}
-          />
-          {formData.image && (
-            <Input
-              disabled
-              style={{display: formData.image ? 'block' : 'none'}}
-              value={formData.image.name}
-            />
-          )}
-        </Grid>
-        <Grid item>
+        <Grid item
+              sx={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}
+        >
+          <Grid sx={{display: 'flex', alignItems: 'center'}}>
+            <Button
+              onClick={() => document.querySelector('input[name="image"]')?.click()}
+              cursor="pointer"
+              color="primary"
+            >
+              <AttachFileIcon fontSize="large"/>
+            </Button>
+            {formData.image && (
+              <Input
+                disabled
+                style={{display: formData.image ? 'block' : 'none'}}
+                value={formData.image.name}
+              />
+            )}
+          </Grid>
           <Button type="submit" variant="contained" startIcon={<SendIcon/>}>
             Send
           </Button>
